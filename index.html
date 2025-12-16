@@ -17,12 +17,16 @@
         <div class="container">
             <nav>
                 <a href="#" class="logo">HijabFit.</a>
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
                 <ul class="nav-links">
                     <li><a href="#koleksi">Koleksi</a></li>
                     <li><a href="#tentang">Tentang</a></li>
                     <li><a href="#testimoni">Testimoni</a></li>
+                    <li><a href="#koleksi" class="btn btn-outline mobile-btn">Belanja Sekarang</a></li>
                 </ul>
-                <a href="#koleksi" class="btn btn-outline">Belanja Sekarang</a>
+                <a href="#koleksi" class="btn btn-outline desktop-btn">Belanja Sekarang</a>
             </nav>
         </div>
     </header>
@@ -228,6 +232,23 @@
         </div>
     </footer>
 
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
