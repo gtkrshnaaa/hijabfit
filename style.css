@@ -9,9 +9,12 @@
 
 :root {
     --color-bg: #ffffff;
-    --color-primary-light: #f3f0ff; /* Very light lavender */
-    --color-primary: #E6E6FA;       /* Lavender */
-    --color-primary-dark: #967bb6;  /* Darker Purple */
+    --color-primary-light: #f3f0ff;
+    /* Very light lavender */
+    --color-primary: #E6E6FA;
+    /* Lavender */
+    --color-primary-dark: #967bb6;
+    /* Darker Purple */
     --color-text: #4A4A4A;
     --color-text-light: #888888;
     --font-main: 'Outfit', sans-serif;
@@ -120,7 +123,8 @@ nav {
     align-items: center;
     position: relative;
     background: linear-gradient(135deg, #fff 0%, #fbf9ff 100%);
-    padding-top: 80px; /* Space for fixed header if needed, currently absolute */
+    padding-top: 80px;
+    /* Space for fixed header if needed, currently absolute */
 }
 
 .hero .container {
@@ -170,7 +174,8 @@ nav {
 .hero-image img {
     width: 100%;
     height: auto;
-    border-radius: 24px; /* Optional rounded corners */
+    border-radius: 24px;
+    /* Optional rounded corners */
     display: block;
     /* Consider masking or specific styling based on the image type */
     mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
@@ -341,6 +346,132 @@ nav {
     outline: none;
 }
 
+/* Testimonials */
+.testimonials {
+    padding: 100px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    border: 1px solid rgba(230, 230, 250, 0.3);
+}
+
+.testimonial-card::before {
+    content: '"';
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    color: var(--color-primary);
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    opacity: 0.5;
+}
+
+.user-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--color-primary-dark);
+}
+
+.stars {
+    color: #FFD700;
+    margin-bottom: 16px;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: var(--color-text);
+    margin-bottom: 24px;
+}
+
+.user-name {
+    font-weight: 600;
+    color: var(--color-primary-dark);
+}
+
+/* About Section */
+.about {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 24px;
+}
+
+.about-text p {
+    margin-bottom: 16px;
+    color: var(--color-text-light);
+}
+
+.about-stats {
+    display: flex;
+    gap: 48px;
+    margin-top: 32px;
+}
+
+.stat-item h4 {
+    font-size: 2rem;
+    color: var(--color-primary-dark);
+    font-family: var(--font-heading);
+}
+
+.stat-item p {
+    font-size: 0.9rem;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-hover);
+}
+
+.about-image::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 200px;
+    height: 200px;
+    background-color: var(--color-primary-light);
+    z-index: -1;
+    border-radius: var(--radius);
+}
+
 /* Footer */
 footer {
     padding: 64px 0 32px;
@@ -405,24 +536,25 @@ footer {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .hero-content h1 {
         font-size: 3rem;
     }
-    
+
     .hero-content p {
         margin: 0 auto 32px;
     }
-    
+
     .nav-links {
-        display: none; /* Simple mobile hide for now, could add hamburger */
+        display: none;
+        /* Simple mobile hide for now, could add hamburger */
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .footer-links {
         justify-content: center;
         flex-wrap: wrap;
